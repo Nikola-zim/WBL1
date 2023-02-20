@@ -7,7 +7,6 @@ import (
 
 // Встраивание методов
 // Имеем родительскую структуру Human
-
 type Human struct {
 	age  uint
 	name string
@@ -21,8 +20,7 @@ func NewHuman(age uint, name string) *Human {
 	return &Human{age: age, name: name}
 }
 
-//Встраиваем родительскую структуру Human в структуру Action
-
+// Встраиваем родительскую структуру Human в структуру Action
 type Action struct {
 	isHungry bool
 	Human
