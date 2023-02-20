@@ -28,12 +28,12 @@ func typeDeterminer3(input interface{}) {
 
 func main() {
 	//1. С помощью reflect.TypeOf
-	fmt.Println("\nОпределение типа помощью reflect.TypeOf")
+	fmt.Println("\nОпределение типа с помощью reflect.TypeOf")
 	testingStrategy(typeDeterminer1)
 	//2. С помощью Printf
-	fmt.Println("\nОпределение типа помощью Printf")
+	fmt.Println("\nОпределение типа с помощью Printf")
 	testingStrategy(typeDeterminer2)
 	//2. С помощью ValueOf(input).Kind()
-	fmt.Println("\nОпределение типа помощью ValueOf(input).Kind()")
+	fmt.Println("\nОпределение типа с помощью ValueOf(input).Kind()")
 	testingStrategy(typeDeterminer3)
 }
