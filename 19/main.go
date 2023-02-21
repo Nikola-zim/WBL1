@@ -7,16 +7,18 @@ import (
 
 func main() {
 	var input string
-	var res strings.Builder
+	var res strings.Builder // для ускорения работы
 
 	for {
 		res.Reset()
 		_, err := fmt.Scan(&input)
+		//Постоянный ввод строки
 		if err != nil {
 			fmt.Println("Неверный ввод")
 			continue
 		}
-		//fmt.Printf("Length of given string is %d\n", len([]rune(input)))
+
+		//Поэлементная запись в res вводимой строки в обратном порядке
 		for i := len([]rune(input)) - 1; i >= 0; i-- {
 			res.WriteRune([]rune(input)[i])
 		}

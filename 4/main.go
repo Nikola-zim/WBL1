@@ -28,6 +28,7 @@ func main() {
 	<-cleanupDone
 }
 
+// Публикация в канал
 func publisher(c chan interface{}, numbWork int) {
 	var sleepingTime int
 	//Задержка времени с расчётом колличество воркеров и константного времни
@@ -40,6 +41,7 @@ func publisher(c chan interface{}, numbWork int) {
 	}()
 }
 
+// Набор из N воркеров, которые читают произвольные данные из канала и выводят в stdout
 func workers(c chan interface{}, numbWork int) {
 	for i := 0; i <= numbWork; i++ {
 		go func() {

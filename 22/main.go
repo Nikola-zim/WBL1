@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	// Используем пакет big для чисел которые могут выйти за пределы int64
 	a := new(big.Int)
 	b := new(big.Int)
 	res := new(big.Int)
@@ -25,6 +26,7 @@ func main() {
 		fmt.Print("Enter operation (+, -, *, /): ")
 		operation := readLine(reader)
 
+		// Выполнение операций над числами
 		switch operation {
 		case "+":
 			res.Add(a, b)

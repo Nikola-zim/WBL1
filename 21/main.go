@@ -45,7 +45,7 @@ func main() {
 	//Простой случай, когда адаптер не нужен
 	circle := &Circle{radius: 2.5}
 	PrintCircleArea(circle)
-	//использование адаптера для старой структуры
+	//Использование адаптера для старой структуры
 	legacyCircle := &LegacyCircle{radius: 2.5}
 	legacyCircleAdapter := &LegacyCircleAdapter{legacyCircle: legacyCircle}
 	PrintCircleArea(legacyCircleAdapter)

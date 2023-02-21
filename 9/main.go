@@ -11,13 +11,14 @@ const bufSize = 1     //Размер буферизированного кана
 func main() {
 	now := time.Now()
 	var arr [arrSize]int
-	for idx, _ := range arr {
+	for idx := range arr {
 		arr[idx] = idx
 	}
-	//Горутина для записи массива в канал
 	firstChan := make(chan int, bufSize)
+	//Горутина для записи массива в канал
 	go writeArr(firstChan, arr)
 	secondChan := make(chan int, bufSize)
+	//Горутина для чтения из firstChan, умножения и вывода
 	go multiplyX(firstChan, secondChan)
 	for val := range secondChan {
 		fmt.Println(val)
